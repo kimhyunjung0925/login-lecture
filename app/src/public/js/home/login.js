@@ -1,3 +1,3 @@
 "use strict"
 
-console.log("ddd")
+console.log("by")
