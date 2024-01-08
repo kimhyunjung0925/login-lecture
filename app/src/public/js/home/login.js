@@ -4,8 +4,6 @@ const id = document.querySelector("#id"),
     password = document.querySelector("#password"),
     loginBtn = document.querySelector("button");
 
-loginBtn.addEventListener("click",login)
-
 function login() {
 
     const req = {
@@ -32,3 +30,5 @@ function login() {
             console.error(("로그인중 에러"));
         })
 }
+
+loginBtn.addEventListener("click",login)
