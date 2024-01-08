@@ -6,8 +6,9 @@ const app = express();
 
 //앱세팅
 app.set("views","./src/views");
-app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile); //html 연결시 오류나서 추가
 app.set("view engine","html");
+app.use(express.static(`${__dirname}/src/public`)); //js html 연결위한 미들웨어 등록
 
 
 //라우팅
