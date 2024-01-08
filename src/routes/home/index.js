@@ -11,6 +11,3 @@ router.get('/', ctrl.home)
 router.get('/login', ctrl.login)
 
 module.exports = router;
-
-
-
