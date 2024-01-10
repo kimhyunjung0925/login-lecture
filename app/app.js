@@ -22,5 +22,8 @@ app.use("/", home); //=> 미들웨어 등록해주는 메서드
 
 module.exports = app;
 
+ 
+//영화API KEY
+//9fa444fb8d829f6d36d0d985d1dbf83d
 
 
