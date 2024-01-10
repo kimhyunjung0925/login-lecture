@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <script src="/js/home/login.js" defer></script>
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/home/login.css">
+    <script src="/js/home/login.js" defer></script>
+
     <title>Document</title>
 </head>
 <body>
-    
-        <div class="mb-3">
-            <input id = "id" type="text" placeholder="아이디">
-            <!-- 
-                <label for="id" class="form-label">아이디</label>
-                <input id = "id" type="email" class="form-control" aria-describedby="emailHelp">
-             -->
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
         </div>
-        <div class="mb-3">
-            
-            <input id = "password" type="text" placeholder="비밀번호">
-            <!--
-                <label for="psword" class="form-label">비밀번호</label>
-                <input id = "psword" type="password" class="form-control" >
-            -->
-        </div>
-        <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            type="submit"
-        </div> -->
-        
-        <button  class="btn btn-primary">확인</button>
-
+      </div>
     
 </body>
+
 </html>
+
+<!-- Copyright (c) 2024 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) -->
