@@ -1,16 +1,22 @@
 "use strict";
 
+const fs = require("fs").promises;
 class UserStorage {
-    // # 은닉화
-    static #users = {
-        id: ["test1","test2","test3"],
-        password: ["1234","5678","910"],
-        name: ["가나","다라","마바"],
-    };
+    //#은닉화
+    static #getUserInfo(data,id) {
+        const users = JSON.parse(data)
+        const idx = users.id.indexOf(id);
+        const usersKeys = Object.keys(users);  //[id,password,name]
+        const userInfo = usersKeys.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+        return userInfo;
+    }
 
     //은닉화 후 메서드 생성으로 전달, 컨트롤러에서 메서드로 호출
     static getUsers(...fields){
-        const users = this.#users;
+        //const users = this.#users;
         const newUsers = fields.reduce((newUsers, field) => {
             if (users.hasOwnProperty(field)) {
                 newUsers[field] = users[field];
@@ -21,19 +27,17 @@ class UserStorage {
     }
     
     static getUserInfo(id) {
-        const users = this.#users;
-        const idx = users.id.indexOf(id);
-        const usersKeys = Object.keys(users);
-        const userInfo = usersKeys.reduce((newUser, info) => {
-            newUser[info] = users[info][idx];
-            return newUser;
-        }, {});
 
-        return userInfo;
+        return fs
+          .readFile("./src/databases/users.json")
+          .then((data) => {
+                return this.#getUserInfo(data, id);
+            })
+            .catch(console.error);    
     }
 
     static save(userInfo) {
-        const users = this.#users;
+        //const users = this.#users;
         users.id.push(userInfo.id);
         users.name.push(userInfo.name);
         users.password.push(userInfo.password);
