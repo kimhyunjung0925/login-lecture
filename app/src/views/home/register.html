@@ -4,7 +4,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="/css/home/login.css">
     <script src="/js/home/register.js" defer></script>
 
@@ -14,11 +14,11 @@
     <div class="login-page">
         <div class="form">
           <form class="login-form">
-            <input type="text" id = "id" placeholder="아이디"/>
-            <input type="text" id = "name" placeholder="이름"/>
-            <input type="password" id = "password"  placeholder="비밀번호"/>
-            <input type="password" id = "confirm-password"  placeholder="비밀번호 확인"/>
-            <p id = button>Sing Up</p>
+            <input id = "id" type="text"  placeholder="아이디"/>
+            <input id = "name" type="text" placeholder="이름"/>
+            <input id = "password" type="password" placeholder="비밀번호"/>
+            <input id = "confirm-password" type="password" placeholder="비밀번호 확인"/>
+            <button type="button">Sing Up</button>
             <p class="message">Already registered? <a href="/login">Login</a></p>
           </form>
         </div>
@@ -28,4 +28,3 @@
 
 </html>
 
-<!-- Copyright (c) 2024 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy) -->
