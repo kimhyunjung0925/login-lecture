@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended : true }));
 
 app.use("/", home); //=> 미들웨어 등록해주는 메서드
 
+
 module.exports = app;
 
  
